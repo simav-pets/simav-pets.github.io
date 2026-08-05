@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIMAV — Ergänzungsfuttermittel für Hunde | Für mehr Gelassenheit im Alltag</title>
+<meta name="description" content="SIMAV Calming Soft Chews — natürliche Rezeptur für mehr Ruhe im Alltag Ihres Hundes. Hergestellt in der EU, GMP+ zertifiziert.">
+<style>
+  @font-face { font-family:'Fraunces'; src:url('/fonts/fraunces-latin-400-normal.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Fraunces'; src:url('/fonts/fraunces-latin-500-normal.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Fraunces'; src:url('/fonts/fraunces-latin-600-normal.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Work Sans'; src:url('/fonts/work-sans-latin-400-normal.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Work Sans'; src:url('/fonts/work-sans-latin-500-normal.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Work Sans'; src:url('/fonts/work-sans-latin-600-normal.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+  :root {
+    --forest: #2B4335;
+    --forest-deep: #1D2F25;
+    --cream: #F4EFE3;
+    --cream-warm: #EFE7D6;
+    --gold: #B8935A;
+    --sage: #8FA88F;
+    --ink: #23241F;
+    --ink-soft: #55584F;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--forest-deep);
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(244,239,227,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(43,67,53,0.1);
+  }
+  nav .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 18px; padding-bottom: 18px;
+  }
+  .logo { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: var(--forest-deep); }
+  .logo span { color: var(--gold); }
+  nav ul { list-style: none; display: flex; gap: 32px; font-size: 14px; letter-spacing: 0.02em; }
+  nav a { text-decoration: none; color: var(--ink-soft); transition: color .2s; }
+  nav a:hover { color: var(--forest); }
+  .nav-cta {
+    background: var(--forest); color: var(--cream) !important;
+    padding: 10px 20px; border-radius: 3px; font-size: 13px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 100px 0 80px;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center;
+  }
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 5vw, 56px); line-height: 1.08; margin-bottom: 22px;
+  }
+  .hero p.lead {
+    font-size: 18px; color: var(--ink-soft); max-width: 440px; margin-bottom: 34px;
+  }
+  .btn-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 14px 28px; border-radius: 3px;
+    text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary { background: var(--forest); color: var(--cream); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(43,67,53,0.25); }
+  .btn-ghost { border: 1px solid var(--forest); color: var(--forest); }
+
+  /* Breathing circle — signature element */
+  .breath-wrap {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    height: 380px;
+  }
+  .breath-ring {
+    position: absolute; border-radius: 50%; border: 1px solid rgba(43,67,53,0.25);
+    animation: breathe 6s ease-in-out infinite;
+  }
+  .breath-ring.r1 { width: 200px; height: 200px; animation-delay: 0s; }
+  .breath-ring.r2 { width: 280px; height: 280px; animation-delay: -1.5s; border-color: rgba(184,147,90,0.3); }
+  .breath-ring.r3 { width: 360px; height: 360px; animation-delay: -3s; }
+  @keyframes breathe {
+    0%, 100% { transform: scale(0.85); opacity: 0.35; }
+    50% { transform: scale(1.05); opacity: 0.85; }
+  }
+  .breath-core {
+    position: relative; width: 150px; height: 150px; border-radius: 50%;
+    background: var(--forest);
+    display: flex; align-items: center; justify-content: center;
+    animation: breathe-core 6s ease-in-out infinite;
+    box-shadow: 0 20px 50px rgba(43,67,53,0.3);
+  }
+  @keyframes breathe-core {
+    0%, 100% { transform: scale(0.94); }
+    50% { transform: scale(1.04); }
+  }
+  .breath-core svg { width: 62px; height: 62px; stroke: var(--cream); }
+  @media (prefers-reduced-motion: reduce) {
+    .breath-ring, .breath-core { animation: none; }
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust-strip {
+    background: var(--forest-deep); color: var(--cream);
+    padding: 22px 0;
+  }
+  .trust-strip .wrap {
+    display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
+    font-size: 13px; letter-spacing: 0.04em; text-align: center;
+  }
+  .trust-strip strong { color: var(--gold); }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section { padding: 90px 0; }
+  .section-head { max-width: 560px; margin-bottom: 56px; }
+  .section-head .eyebrow { margin-bottom: 14px; }
+  .section-head h2 { font-size: clamp(28px, 3.4vw, 38px); }
+  .section-head p { color: var(--ink-soft); margin-top: 14px; font-size: 16px; }
+
+  /* ---------- INGREDIENTS ---------- */
+  .ingredients-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: rgba(43,67,53,0.15); border: 1px solid rgba(43,67,53,0.15);
+  }
+  .ing-card {
+    background: var(--cream); padding: 30px 24px;
+  }
+  .ing-card .amt { font-family: 'Fraunces', serif; font-size: 30px; color: var(--forest); }
+  .ing-card .name { font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+  @media (max-width: 800px) { .ingredients-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ---------- DOSAGE ---------- */
+  .dosage-section { background: var(--cream-warm); }
+  .dosage-table {
+    width: 100%; border-collapse: collapse; background: var(--cream);
+    box-shadow: 0 10px 40px rgba(43,67,53,0.08);
+  }
+  .dosage-table th {
+    text-align: left; font-family: 'Fraunces', serif; font-weight: 500;
+    background: var(--forest); color: var(--cream);
+    padding: 16px 24px; font-size: 15px;
+  }
+  .dosage-table td {
+    padding: 18px 24px; border-bottom: 1px solid rgba(43,67,53,0.1); font-size: 15px;
+  }
+  .dosage-table tr:last-child td { border-bottom: none; }
+
+  /* ---------- HOW TO USE ---------- */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .step { padding: 8px 0; }
+  .step .num {
+    font-family: 'Fraunces', serif; font-size: 15px; color: var(--gold);
+    border-bottom: 1px solid var(--gold); display: inline-block; padding-bottom: 4px; margin-bottom: 16px;
+  }
+  .step h3 { font-size: 19px; margin-bottom: 10px; }
+  .step p { color: var(--ink-soft); font-size: 15px; }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+
+  /* ---------- DISCLAIMER STRIP ---------- */
+  .disclaimer {
+    background: var(--cream-warm); border-top: 1px solid rgba(43,67,53,0.12);
+    border-bottom: 1px solid rgba(43,67,53,0.12);
+  }
+  .disclaimer .wrap { padding: 28px 32px; }
+  .disclaimer p { font-size: 13px; color: var(--ink-soft); max-width: 780px; }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--forest-deep); color: var(--cream); padding: 70px 0 40px; }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 50px;
+  }
+  footer h4 { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; font-weight: 600;}
+  footer .logo { color: var(--cream); margin-bottom: 14px; }
+  footer p, footer a { color: rgba(244,239,227,0.75); font-size: 14px; text-decoration: none; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 10px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(244,239,227,0.15); padding-top: 24px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-size: 12px; color: rgba(244,239,227,0.55);
+  }
+  @media (max-width: 800px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; }
+    .breath-wrap { height: 280px; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">SIMAV<span>.</span></div>
+    <ul>
+      <li><a href="#produkt">Produkt</a></li>
+      <li><a href="#dosierung">Dosierung</a></li>
+      <li><a href="#qualitaet">Qualität</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="btn nav-cta">Auf Amazon ansehen</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div>
+    <div class="eyebrow">Ergänzungsfuttermittel für Hunde</div>
+    <h1>Für mehr Gelassenheit<br>im Alltag Ihres Hundes.</h1>
+    <p class="lead">Soft Chews mit Baldrianwurzel, L-Tryptophan, Ashwagandha und Zitronenmelisse — entwickelt, um ruhiges Verhalten als Teil einer täglichen Routine zu unterstützen.</p>
+    <div class="btn-row">
+      <a href="#produkt" class="btn btn-primary">Rezeptur entdecken</a>
+      <a href="#dosierung" class="btn btn-ghost">Dosierung ansehen</a>
+    </div>
+  </div>
+  <div class="breath-wrap" aria-hidden="true">
+    <div class="breath-ring r3"></div>
+    <div class="breath-ring r2"></div>
+    <div class="breath-ring r1"></div>
+    <div class="breath-core">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.5 12.5c1-3 2.8-5 5-6.2 0 2.4.6 4 1.8 5.4 1.4-1.8 3.4-2.6 5.7-2.4-.6 3.4-3 6.6-6.5 7.7-3 .9-5.4-.4-6-4.5z"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div><strong>EU</strong> — Made in EU</div>
+    <div><strong>GMP+</strong> — zertifizierte Produktion</div>
+    <div><strong>7</strong> aktive Inhaltsstoffe</div>
+    <div><strong>60</strong> Soft Chews je Glas</div>
+  </div>
+</div>
+
+<section id="produkt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Die Rezeptur</div>
+      <h2>Sieben Inhaltsstoffe. Eine Richtung: Ruhe.</h2>
+      <p>Jeder Chew (3 g) enthält eine festgelegte Menge sorgfältig ausgewählter Wirkstoffe, ergänzend zu einer ausgewogenen Ernährung.</p>
+    </div>
+    <div class="ingredients-grid">
+      <div class="ing-card"><div class="amt">150 mg</div><div class="name">Hanfsamenöl</div></div>
+      <div class="ing-card"><div class="amt">50 mg</div><div class="name">Baldrianwurzel-Extrakt</div></div>
+      <div class="ing-card"><div class="amt">50 mg</div><div class="name">Magnesium-Diglycinat</div></div>
+      <div class="ing-card"><div class="amt">50 mg</div><div class="name">L-Tryptophan</div></div>
+      <div class="ing-card"><div class="amt">50 mg</div><div class="name">Ashwagandha-Wurzel</div></div>
+      <div class="ing-card"><div class="amt">40 mg</div><div class="name">Zitronenmelisse</div></div>
+      <div class="ing-card"><div class="amt">30 mg</div><div class="name">Grüntee-Extrakt (Theanin)</div></div>
+      <div class="ing-card"><div class="amt">180 g</div><div class="name">Glas · 60 Soft Chews</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="dosierung" class="dosage-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Anwendung</div>
+      <h2>Dosierung nach Gewicht</h2>
+      <p>Für regelmäßigen Einsatz als Teil der täglichen Routine, oder gezielt vor absehbaren, stressigen Situationen.</p>
+    </div>
+    <table class="dosage-table">
+      <tr><th>Gewicht des Hundes</th><th>Tagesdosis</th></tr>
+      <tr><td>Bis 10 kg</td><td>1 Chew</td></tr>
+      <tr><td>10–30 kg</td><td>2 Chews</td></tr>
+      <tr><td>Über 30 kg</td><td>3 Chews</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="qualitaet">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Herkunft &amp; Qualität</div>
+      <h2>Wie SIMAV entsteht</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Herstellung in der EU</h3>
+        <p>Produziert in einer GMP+ zertifizierten Anlage nach europäischen Futtermittelstandards.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Geprüfte Rezeptur</h3>
+        <p>Analytische Bestandteile und Zusatzstoffe sind vollständig deklariert und rückverfolgbar je Charge.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Registriert &amp; kontrolliert</h3>
+        <p>Bei der zuständigen Futtermittelbehörde registriert (LAVES-Nummer LAVES-144056).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  <div class="wrap">
+    <p><strong>Hinweis:</strong> SIMAV ist ein Ergänzungsfuttermittel und kein Ersatz für eine ausgewogene und vollwertige Ernährung. Die empfohlene Tagesdosis nicht überschreiten. Kann zwischen den Mahlzeiten gefüttert werden. Bei anhaltenden Verhaltensauffälligkeiten konsultieren Sie bitte einen Tierarzt.</p>
+  </div>
+</div>
+
+<footer id="kontakt">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">SIMAV<span>.</span></div>
+        <p>Ergänzungsfuttermittel für Hunde, entwickelt für mehr Gelassenheit im Alltag.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:info@simav.online">info@simav.online</a></li>
+          <li><a href="tel:+4915510760046">+49 155 10760046</a></li>
+          <li>Steller Str. 67, 28259 Bremen</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutzerklärung</a></li>
+          <li><a href="/agb.html">AGB</a></li>
+          <li><a href="/widerruf.html">Widerrufsbelehrung</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Aslan Abed — SIMAV. Alle Rechte vorbehalten.</div>
+      <div>EAN 4270005483207</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
