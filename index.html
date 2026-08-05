@@ -205,11 +205,20 @@
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
     font-size: 12px; color: rgba(244,239,227,0.55);
   }
+  .showcase {
+    padding: 90px 0;
+  }
+  .showcase .wrap {
+    display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; align-items: center;
+  }
+  .showcase-img {
+    border-radius: 4px; overflow: hidden; box-shadow: 0 30px 60px rgba(43,67,53,0.18);
+  }
+  .showcase-img img { width: 100%; display: block; }
+  .showcase-text h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: 18px; }
+  .showcase-text p { color: var(--ink-soft); font-size: 16px; margin-bottom: 14px; }
   @media (max-width: 800px) {
-    .footer-grid { grid-template-columns: 1fr; }
-    .hero { grid-template-columns: 1fr; }
-    .breath-wrap { height: 280px; }
-    nav ul { display: none; }
+    .showcase .wrap { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -256,6 +265,20 @@
     <div><strong>60</strong> Soft Chews je Glas</div>
   </div>
 </div>
+
+<section class="showcase">
+  <div class="wrap">
+    <div class="showcase-img">
+      <img src="/images/produkt-simav.png" alt="SIMAV Produktglas">
+    </div>
+    <div class="showcase-text">
+      <div class="eyebrow">Das Produkt</div>
+      <h2>Ein Glas, sieben sorgfältig ausgewählte Wirkstoffe.</h2>
+      <p>SIMAV wird in einer GMP+ zertifizierten Anlage in der EU hergestellt und liefert 60 Soft Chews im 180-g-Glas — genug für mehrere Wochen der täglichen Anwendung.</p>
+      <p>Jeder Chew wiegt 3 g und enthält eine festgelegte, deklarierte Menge an Baldrianwurzel, L-Tryptophan, Ashwagandha, Zitronenmelisse, Grüntee-Extrakt, Magnesium-Diglycinat und Hanfsamenöl.</p>
+    </div>
+  </div>
+</section>
 
 <section id="produkt">
   <div class="wrap">
