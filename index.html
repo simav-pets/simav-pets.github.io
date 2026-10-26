@@ -38,7 +38,17 @@
       "image": "https://simav.online/images/produkt-dose.jpg",
       "brand": { "@type": "Brand", "name": "SIMAV" },
       "gtin13": "4270005483207",
-      "url": "https://simav.online/"
+      "url": "https://simav.online/",
+      "sku": "SIMAV-CALM-01",
+      "sameAs": "https://www.amazon.de/dp/B0HKQ4N7JF",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.amazon.de/dp/B0HKQ4N7JF",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": { "@type": "Organization", "name": "Amazon.de" }
+      }
     }
   ]
 }
@@ -330,6 +340,19 @@ footer li { font-size: 14px; color: rgba(244,239,227,0.75); }
   .breath-ring.r3 { width: 295px; height: 295px; }
   section { padding: 64px 0; }
 }
+.buy { background: var(--forest-deep); color: var(--cream); }
+.buy h2 { color: var(--cream); font-size: clamp(28px, 3.4vw, 38px); margin: 6px 0 14px; }
+.buy p { color: rgba(244,239,227,0.8); }
+.buy .btn-primary { background: var(--gold); color: var(--forest-deep); font-size: 16px; padding: 16px 32px; }
+.buy-facts { list-style: none; margin: 22px 0 30px; }
+.buy-facts li { padding: 6px 0; font-size: 15px; color: rgba(244,239,227,0.85); }
+.buy-facts li strong { color: var(--gold); }
+.buy .img-card { max-width: 420px; justify-self: center; }
+.mobile-buy { display: none; }
+@media (max-width: 800px) {
+  .mobile-buy { display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; text-align: center; background: var(--forest); color: var(--cream); padding: 14px; border-radius: 6px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+  footer { padding-bottom: 90px; }
+}
 </style>
 </head>
 <body>
@@ -344,6 +367,7 @@ footer li { font-size: 14px; color: rgba(244,239,227,0.75); }
 <li><a href="#zutaten">Zutaten</a></li>
 <li><a href="#dosierung">Fütterung</a></li>
 <li><a href="#kennzeichnung">Kennzeichnung</a></li>
+<li><a href="#kaufen">Kaufen</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 </ul>
 <a href="https://www.amazon.de/dp/B0HKQ4N7JF" class="btn nav-cta" target="_blank" rel="noopener">Auf Amazon ansehen</a>
@@ -516,6 +540,23 @@ Losnummer und Mindesthaltbarkeit: siehe Dose.</p>
 </div>
 </section>
 
+<section id="kaufen" class="buy">
+<div class="wrap split">
+<div class="img-card"><img src="/images/produkt-dose.jpg" alt="SIMAV Dose mit 60 Soft Chews" width="835" height="835" loading="lazy"></div>
+<div>
+<div class="eyebrow">Jetzt bestellen</div>
+<h2>SIMAV auf Amazon.de kaufen</h2>
+<p>Unsere Soft Chews erhalten Sie exklusiv über Amazon.de – mit Prime-Versand durch Amazon und den gewohnten Rückgabebedingungen.</p>
+<ul class="buy-facts">
+<li><strong>60</strong> weiche Herzchen · 180 g je Dose</li>
+<li><strong>ASIN</strong> B0HKQ4N7JF · EAN 4270005483207</li>
+<li><strong>Versand</strong> durch Amazon</li>
+</ul>
+<a href="https://www.amazon.de/dp/B0HKQ4N7JF" class="btn btn-primary" target="_blank" rel="noopener">Jetzt auf Amazon kaufen</a>
+</div>
+</div>
+</section>
+
 <div class="disclaimer">
 <div class="wrap">
 <p><strong>Hinweis:</strong> Kein Ersatz für eine ausgewogene und vollwertige Ernährung. Die empfohlene Tagesdosis nicht überschreiten. Kann zwischen den Mahlzeiten gefüttert werden. Bei anhaltenden Verhaltensauffälligkeiten Ihres Hundes wenden Sie sich bitte an eine Tierärztin oder einen Tierarzt. Abbildungen mit Personen und Hunden sind teilweise KI-generiert.</p>
@@ -553,6 +594,7 @@ Losnummer und Mindesthaltbarkeit: siehe Dose.</p>
 </div>
 </div>
 </footer>
+<a href="https://www.amazon.de/dp/B0HKQ4N7JF" class="mobile-buy" target="_blank" rel="noopener">Jetzt auf Amazon kaufen</a>
 
 </body>
 </html>
